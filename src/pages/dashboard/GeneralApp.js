@@ -1,10 +1,18 @@
-import React from "react";
+import { React } from "react";
+
+//Dyamic loading
+// const Cat = lazy(() => import("../../components/Cat"))
 
 const GeneralApp = () => {
 
   return (
     <>
-      App
+      {/* <Suspense fallback="Loading ...">
+        <Cat />
+        <div>Hellow world</div>
+      </Suspense> */}
+
+     
     </>
   );
 };
