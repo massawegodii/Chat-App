@@ -24,7 +24,7 @@ const Message = () => {
                   // Link
                   return <LinkMsg el={el}/>;
 
-                case "replay":
+                case "reply":
                   // Reply 
                   return <ReplyMsg el={el}/>;
                 default:
