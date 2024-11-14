@@ -16,13 +16,13 @@ import { ChatList } from "../../data";
 import { SimpleBarStyle } from "../../components/Scrollbar";
 
 const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       sx={{
         width: "100%",
         borderRadius: 1,
-        backgroundColor: theme.palette.mode === "light" ? "#fff": theme.palette.background.default,
+        backgroundColor: theme.palette.mode === "light" ? "#fff" : theme.palette.background.default,
       }}
       p={2}
     >
@@ -34,16 +34,10 @@ const ChatElement = ({ id, name, img, msg, time, unread, online }) => {
               anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
               variant="dot"
             >
-              <Avatar
-                src={`https://i.pravatar.cc/300?u=${Math.random()}`}
-                alt="Random Avatar"
-              />
+              <Avatar src={`https://i.pravatar.cc/300?u=${Math.random()}`} alt="Random Avatar" />
             </StyledBadge>
           ) : (
-            <Avatar
-              src={`https://i.pravatar.cc/300?u=${Math.random()}`}
-              alt="Random Avatar"
-            />
+            <Avatar src={`https://i.pravatar.cc/300?u=${Math.random()}`} alt="Random Avatar" />
           )}
 
           <Stack spacing={0.3}>
@@ -122,7 +116,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Chats = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -161,15 +155,22 @@ const Chats = () => {
         <Stack
           spacing={2}
           direction="column"
-          sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}
+          sx={{
+            flexGrow: 1,
+            overflowY: "auto",
+            height: "100%",
+            "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar for WebKit browsers
+            msOverflowStyle: "none", // Hide scrollbar for Internet Explorer and Edge
+            scrollbarWidth: "none", // Hide scrollbar for Firefox
+          }}
         >
-          <SimpleBarStyle timeout={500} clickOnTrack="false">
+          <SimpleBarStyle timeout={500} clickOnTrack={false}>
             <Stack spacing={2.4}>
               <Typography variant="subtitle2" sx={{ color: "#6767676" }}>
                 Pinned
               </Typography>
               {ChatList.filter((el) => el.pinned).map((el) => {
-                return <ChatElement {...el} />;
+                return <ChatElement {...el} key={el.id} />;
               })}
             </Stack>
 
@@ -178,7 +179,7 @@ const Chats = () => {
                 All Chats
               </Typography>
               {ChatList.filter((el) => !el.pinned).map((el) => {
-                return <ChatElement {...el} />;
+                return <ChatElement {...el} key={el.id} />;
               })}
             </Stack>
           </SimpleBarStyle>
