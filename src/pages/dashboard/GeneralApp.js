@@ -12,7 +12,6 @@ const GeneralApp = () => {
 
       <Chats />
 
-
       <Box
         sx={{
           height: "100%",

@@ -6,22 +6,15 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   height: 20,
   padding: 0,
   display: "flex",
-  "&:active": {
-    "& .MuiSwitch-thumb": {
-      width: 15,
-    },
-    "& .MuiSwitch-switchBase.Mui-checked": {
-      transform: "translateX(9px)",
-    },
-  },
   "& .MuiSwitch-switchBase": {
     padding: 2,
+    transitionDuration: "100ms",
     "&.Mui-checked": {
       transform: "translateX(20px)",
       color: "#fff",
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: "#1890ff",
       },
     },
   },
@@ -30,18 +23,14 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 16,
     height: 16,
     borderRadius: 8,
-    transition: theme.transitions.create(["width"], {
+    transition: theme.transitions.create(["transform", "background-color"], {
       duration: 200,
     }),
   },
   "& .MuiSwitch-track": {
-    borderRadius: 20 / 2,
+    borderRadius: 10,
     opacity: 1,
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? "rgba(255,255,255,.35)"
-        : "rgba(0,0,0,.25)",
-    boxSizing: "border-box",
+    backgroundColor: "rgba(0,0,0,.25)",
   },
 }));
 
