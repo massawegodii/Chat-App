@@ -11,7 +11,7 @@ import {
 import { Bell, CaretRight, Phone, Prohibit, Star, Trash, VideoCamera, X } from "phosphor-react";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { ToggleSidebar } from "../redux/slices/app";
+import { ToggleSidebar, UpdateSidebarType } from "../redux/slices/app";
 import { faker } from "@faker-js/faker";
 import AntSwitch from './AntSwitch';
 
@@ -111,9 +111,9 @@ const Contact = () => {
           >
             <Typography variant="subtitle2">Media, Links & Docs</Typography>
             <Button
-              // onClick={() => {
-              //   dispatch(UpdateSidebarType("SHARED"));
-              // }}
+              onClick={() => {
+                dispatch(UpdateSidebarType("SHARED"));
+              }}
               endIcon={<CaretRight />}
             >
               401
@@ -138,9 +138,9 @@ const Contact = () => {
             </Stack>
 
             <IconButton
-              // onClick={() => {
-              //   dispatch(UpdateSidebarType("STARRED"));
-              // }}
+              onClick={() => {
+                dispatch(UpdateSidebarType("STARRED"));
+              }}
             >
               <CaretRight />
             </IconButton>
