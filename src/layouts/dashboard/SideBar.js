@@ -143,7 +143,7 @@ const SideBar = () => {
             MenuListProps={{
               "aria-labelledby": "basic-button",
             }}
-            anchorOrigin={{
+             anchorOrigin={{
               vertical: "bottom",
               horizontal: "right"
             }}
