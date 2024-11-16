@@ -220,6 +220,73 @@ const Message_options = [
   },
 ];
 
+const SHARED_LINK = [
+  {
+    type: "msg",
+    subtype: "link",
+    preview: faker.image.cats(),
+    message: "Yep, I can also do that",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "link",
+    preview: faker.image.animals(),
+    message: "Check out this amazing link!",
+    incoming: false,
+    outgoing: true,
+  },
+  {
+    type: "msg",
+    subtype: "link",
+    preview: faker.image.city(),
+    message: "Here’s something interesting for you.",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "link",
+    preview: faker.image.nature(),
+    message: "Don’t miss this out!",
+    incoming: false,
+    outgoing: true,
+  },
+];
+
+const SHARED_DOCS = [
+  {
+    type: "msg",
+    subtype: "doc",
+    message: "Yes sure, here you go.",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "doc",
+    message: "Here’s the file you asked for.",
+    incoming: false,
+    outgoing: true,
+  },
+  {
+    type: "msg",
+    subtype: "doc",
+    message: "Please find the document attached.",
+    incoming: true,
+    outgoing: false,
+  },
+  {
+    type: "msg",
+    subtype: "doc",
+    message: "Let me know if this works for you.",
+    incoming: false,
+    outgoing: true,
+  },
+];
+
+
 export {
   Profile_Menu,
   Nav_Setting,
@@ -227,4 +294,6 @@ export {
   ChatList,
   Chat_History,
   Message_options,
+  SHARED_DOCS,
+  SHARED_LINK
 };

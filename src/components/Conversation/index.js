@@ -21,7 +21,7 @@ const Conversation = () => {
           scrollbarWidth: "none", // Hide scrollbar for Firefox
         }}
       >
-        <Message />
+        <Message menu={true}/>
       </Box>
 
       {/* Chat Footer */}

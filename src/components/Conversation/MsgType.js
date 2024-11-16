@@ -13,7 +13,7 @@ import { DotsThreeVertical, DownloadSimple, Image } from "phosphor-react";
 import React from "react";
 import { Message_options } from "../../data";
 
-const DocMsg = ({ el }) => {
+const DocMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
@@ -53,12 +53,13 @@ const DocMsg = ({ el }) => {
         </Stack>
       </Box>
       {/* menu option */}
-      <MessageOptions />
+      {menu &&  <MessageOptions />}
+     
     </Stack>
   );
 };
 
-const LinkMsg = ({ el }) => {
+const LinkMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
@@ -108,12 +109,13 @@ const LinkMsg = ({ el }) => {
         </Stack>
       </Box>
       {/* menu option */}
-      <MessageOptions />
+      {menu && <MessageOptions />}
+      
     </Stack>
   );
 };
 
-const ReplyMsg = ({ el }) => {
+const ReplyMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
@@ -123,7 +125,7 @@ const ReplyMsg = ({ el }) => {
           backgroundColor: el.incoming
             ? theme.palette.background.default
             : theme.palette.primary.main,
-          borderRadius: 1.5, // 1.5 * 8 => 24px
+          borderRadius: 1.5, 
           width: "max-content",
         }}
       >
@@ -151,12 +153,13 @@ const ReplyMsg = ({ el }) => {
         </Stack>
       </Box>
       {/* menu option */}
-      <MessageOptions />
+      {menu && <MessageOptions />}
+      
     </Stack>
   );
 };
 
-const MediaMsg = ({ el }) => {
+const MediaMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
@@ -185,12 +188,13 @@ const MediaMsg = ({ el }) => {
         </Stack>
       </Box>
       {/* menu option */}
-      <MessageOptions />
+      {menu && <MessageOptions />}
+      
     </Stack>
   );
 };
 
-const TextMsg = ({ el }) => {
+const TextMsg = ({ el, menu }) => {
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>
@@ -212,7 +216,8 @@ const TextMsg = ({ el }) => {
         </Typography>
       </Box>
       {/* menu option */}
-      <MessageOptions />
+      {menu && <MessageOptions />}
+      
     </Stack>
   );
 };
