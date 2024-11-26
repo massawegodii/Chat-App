@@ -54,9 +54,7 @@ const CreateGroupForm = ({ handleClose }) => {
   });
 
   const {
-    reset,
-    watch,
-    setValue,
+
     handleSubmit,
     formState: { isSubmitting, isValid },
   } = methods;
