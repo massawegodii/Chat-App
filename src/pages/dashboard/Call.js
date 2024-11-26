@@ -1,18 +1,16 @@
 import { Box, Divider, IconButton, Link, Stack, Typography, useTheme } from '@mui/material';
-import { MagnifyingGlass, Phone } from 'phosphor-react';
+import { MagnifyingGlass, Phone, Plus } from 'phosphor-react';
 import React, { useState } from 'react';
 import {
   Search,
   SearchIconWrapper,
   StyledInputBase,
 } from "../../components/Search";
+import { CallLogElement } from '../../components/CallElement';
+import { CallLogs } from '../../data';
+import StartCall from '../../sections/main/StartCall';
 
 const Call = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(FetchCallLogs());
-  // }, []);
-  // const { call_logs } = useSelector((state) => state.app);
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleCloseDialog = () => {
@@ -71,25 +69,25 @@ const Call = () => {
                 Start a conversation
               </Typography>
               <IconButton onClick={handleOpenDialog}>
-                <Phone style={{ color: theme.palette.primary.main }} />
+                <Plus style={{ color: theme.palette.primary.main }} />
               </IconButton>
             </Stack>
             <Divider />
             <Stack sx={{ flexGrow: 1, overflow: "scroll", height: "100%" }}>
-              {/* <SimpleBarStyle timeout={500} clickOnTrack={false}>
+              {/* <SimpleBarStyle timeout={500} clickOnTrack={false}> */}
                 <Stack spacing={2.4}>
-                  {call_logs.map((el, idx) => {
+                  {CallLogs.map((el, idx) => {
                     return <CallLogElement key={idx} {...el} />;
                   })}
                 </Stack>
-              </SimpleBarStyle> */}
+              {/* </SimpleBarStyle> */}
             </Stack>
           </Stack>
         </Box>
       </Stack>
-      {/* {openDialog && (
+      {openDialog && (
         <StartCall open={openDialog} handleClose={handleCloseDialog} />
-      )} */}
+      )}
     </>
   );
 }
